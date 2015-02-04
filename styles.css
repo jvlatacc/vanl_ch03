@@ -1,0 +1,39 @@
+/*
+
+cleanStickyFooter
+
+Copyright (c) 2009 Trevor Sheridan
+
+*/
+
+/****************
+
+NOT Required (just there to make this look a little prettier)
+
+****************/
+
+body {
+	font-family: Helvetica, Arial, Verdana;
+	font-size: 90%;
+	background-color:#e1f5fe;
+}
+
+div#footer_wrapper {
+	background: #000;
+	padding-top:10px;
+}
+
+div#content_inner_wrapper, div#footer_inner_wrapper {
+	text-align: center;
+	
+}
+
+/*div#content_inner_wrapper {
+	background: #b3e5fc;
+	height: 400px;
+}*/
+
+div#footer_inner_wrapper {
+	color: #ffffff;
+	font-size: 13px;
+}

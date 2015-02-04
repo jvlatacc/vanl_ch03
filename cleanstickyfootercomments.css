@@ -1,0 +1,75 @@
+/*
+
+cleanStickyFooter
+
+Copyright (c) 2009 Trevor Sheridan
+
+*/
+
+/****************
+
+Required
+
+****************/
+
+/* Here we are going to set not only the body but the html tag to a height of 100%, without the html tag at a height of 100% this wont work */
+
+html, body {
+	height: 100%;
+}
+
+/* We want to clear the default margin the browser applies (if you do not already have a browser reset applied) */
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*
+
+In this block we are going to do the following: Set the width of the wrapper to 100% (not required but semantically makes sense because the footer is at the same level and is at a width of 100%, also useful if you want a header that is a width of 100%, you would contain the header inside of div#wrapper), Give the wrapper a min-height of 100% (min-height doesn't work well in IE6 and older browsers like it so we are going to next set the height to auto and make sure it has the !important flag so our new browsers don't pick up on the next line). In the next like we are simply using height: 100%, it will act as min height in the older browsers because older browsers allow expanding heights. Then we are going to set a bottom margin to the negative version of the height of the footer. In our case the footer is 41px high, so our bottom margin is -41px.
+
+*/
+
+div#wrapper {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0px 0px -41px 0px;
+}
+
+/* The footer wrapper we will simply asign a height, the above block pushes everything down for us. We will also push this div out to a width of 100% */
+
+div#footer_wrapper {
+	width: 100%;
+	height: 41px;
+}
+
+/* The main deal with the content wrapper is we need to set a bottom padding of 41px to counteract the -41px margin we set above. We are also setting a width of 100% */
+
+div#content_wrapper {
+	width: 100%;
+	padding: 0px 0px 41px 0px;
+}
+
+/****************
+
+Required in certain cases
+
+****************/
+
+/* Use the next two below if you have all of your content in a centered containing div, in our case the div is 942px wide. If not, disregard the following two blocks */
+
+/* When the content is scrolled horizontally, we will want to set a min-width on the footer_wrapper and the content_wrapper. The min-width should be the width of the container (see the next block below). Without this there will be a gap of empty space on the right side. Min-width will work in older versions of IE if you have a width set above, in our case we have a width of 100% set. */
+
+div#footer_wrapper, div#content_wrapper {
+	min-width: 942px;
+}
+
+/* Here we are going to set the width of our container for the content. We are also going to center the container by using the common margin: 0px auto */
+
+div#footer_inner_wrapper, div#content_inner_wrapper {
+	width: 942px;
+	margin: 0px auto;
+}
